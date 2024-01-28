@@ -1,0 +1,578 @@
+@font-face {
+    font-family: "Tilda Sans VF";
+    src: url(/fonts/TildaSans-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Tilda Sans VF';
+    src: url(/fonts/TildaSans-Regular.woff);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Tilda Sans VF";
+    src: url(/fonts/TildaSans-Regular.woff2);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Tilda Sans VF";
+    src: url(/fonts/TildaSans-Medium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Tilda Sans VF';
+    src: url(/fonts/TildaSans-Medium.woff);
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Tilda Sans VF";
+    src: url(/fonts/TildaSans-Medium.woff2);
+    font-weight: 500;
+}
+
+body {
+    background-image: url(/images/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;    
+    max-width: 1920px;
+}
+
+ *,
+ ::before,
+ ::after {
+    box-sizing: border-box;
+}
+
+ h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+ p {
+    margin: 0;
+}
+
+.hidden {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease;
+  }
+.visible {
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 440px;
+}
+
+.header {
+    background-image: url(/images/effects.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 20px;
+}
+
+.avatar img{
+    display: block;
+    margin: 0 auto;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.avatar {
+    position: relative;
+    display: inline-block;
+}
+  
+.avatar svg.star1 {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    width: 26px;
+    height: 25px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 255, 1)) drop-shadow(0 0 10px rgba(0, 0, 255, 1)) drop-shadow(0 0 15px rgba(0, 0, 255, 1));
+}
+
+svg.star1 path {
+    box-shadow: 0 0 20px rgba(0, 0, 255, 1);
+}
+
+.avatar svg.star2 {
+    position: absolute;
+    bottom: 60px;
+    left: 25px;
+    width: 15px;
+    height: 15px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 255, 1)) drop-shadow(0 0 10px rgba(0, 0, 255, 1)) drop-shadow(0 0 15px rgba(0, 0, 255, 1));
+}
+
+.avatar svg.star3 {
+    position: absolute;
+    bottom: 95px;
+    left: 13px;
+    width: 9.59px;
+    height: 9.59px; 
+    filter: drop-shadow(0 0 5px rgba(0, 0, 255, 1)) drop-shadow(0 0 10px rgba(0, 0, 255, 1)) drop-shadow(0 0 15px rgba(0, 0, 255, 1));
+}
+
+.avatar svg.eclipse {
+    position: absolute;
+    top: 15px;
+    right: 32px;
+    width: 27px;
+    height: 27px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 255, 1)) drop-shadow(0 0 10px rgba(0, 0, 255, 1)) drop-shadow(0 0 15px rgba(0, 0, 255, 1));
+}
+  
+  
+.star1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 255, 0.5), transparent);
+    z-index: -1;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 1);
+}
+  
+
+.nickname {
+    font-family: "Tilda Sans VF";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+
+    background: linear-gradient(93deg, #5200FF -30.15%, #F09 113.47%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.name {
+    color: #A29BC8;
+    font-family: "Tilda Sans VF";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.btn-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.btn-telegram, .btn-lolzteam, .btn-discord {
+    flex: 1;
+    padding: 10px 19px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 9999px;
+    border: none;
+    color: #FFF;
+    font-family: "Tilda Sans VF";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+    box-shadow: 0 0 35px rgba(0, 0, 255, 0.5);
+}
+.btn-telegram {
+    background: linear-gradient(261deg, #6B05FD -3.28%, #E401A9 105.56%);
+}
+.btn-lolzteam {
+    background: linear-gradient(261deg, #6B05FD -3.28%, #E401A9 105.56%);
+}
+.btn-discord {
+    background: linear-gradient(98deg, #6B05FD -3.43%, #E401A9 104.84%);
+}
+
+/* tab  */
+
+.tab {
+    width: 100%;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border: 1px solid #3A3A3D;
+    background: rgba(12, 11, 13, 0.81);
+}
+
+.tab-item {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-donate, .btn-projects {
+    border-radius: 5px;
+    background: radial-gradient(96.47% 96% at 50.42% 4%, #22222D 0%, #24173E 100%);
+    color: #A29BC8;
+    font-family: "Tilda Sans VF";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-donate.active, .btn-projects.active {
+    color: #fff;
+}
+.btn-donate.active svg path, .btn-projects.active svg path{
+    fill: #6B05FD;
+    stroke: #6B05FD;
+}
+
+.tab-content {
+    padding: 25px;
+    border-radius: 5px;
+    border: 1px solid #3A3A3D;
+    background: rgba(21, 21, 23, 0.63);
+}
+
+
+.accordion {
+    width: 100%;
+    /* display: none; */
+}
+
+/* .accordion__box {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+} */
+  
+.accordion__title {
+   display: flex;
+   align-items: center;
+   gap: 6px;
+}
+  
+.rotate-down {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+.accordion__item {
+    margin-top: 14px;
+}
+.accordion__item:first-child {
+    margin-top: 0;
+}
+  .accordion__item img {
+    cursor: pointer;
+  }
+  
+  .accordion__header {
+    border-radius: 9999px;
+    background: #22222D;
+  
+    color: #FFF;
+    font-family: "Tilda Sans VF";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+    padding: 10px 15px 10px 10px;
+    position: relative;
+  
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .accordion__header img {
+   position: absolute;
+   right: 15px;
+  }
+  
+.accordion__icon {
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
+}
+  
+.accordion__icon.rotated {
+    transform: rotate(180deg);
+}
+  
+.accordion__content {
+    display: none;
+    position: relative;
+    bottom: 20px;
+    
+  
+    color: #FFF;
+    font-family: "Tilda Sans VF";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 30px 10px 15px 10px;
+    border-radius: 5px;
+    background: rgba(27, 27, 35, 0.72);
+}
+
+.square {
+    width: 211px;
+    height: 211px;
+    border-radius: 9px;
+    background: rgba(10, 9, 15, 0.69);
+    display: block;
+    margin: 0 auto;
+}
+.adress {
+    color: #FFF;
+    font-family: "Tilda Sans VF";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 10px;
+}
+.adress a {
+    font-family: "Tilda Sans VF";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    background: linear-gradient(90deg, #6B05FD -14.1%, #E401A9 105.6%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.copy-icon {
+    cursor: pointer;
+}
+.copy-icon:hover path{
+    fill: #FFF;
+}
+
+
+.active {
+    background-color: #ddd;
+  }
+
+/* Project */
+.project-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* display: none; */
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.square-project {
+    width: 80px;
+    height: 80px;
+    border-radius: 7px;
+    background: rgba(2, 2, 2, 0.54);
+}
+.project-name {
+    color: #FFF;
+    font-family: "Tilda Sans VF";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.project-description {
+    color: #A29BC8;
+    font-family: "Tilda Sans VF";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 8px;
+}
+
+.project-tag {
+    color: #A29BC8;
+    font-family: "Tilda Sans VF";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 2px 22px;
+    border-radius: 3px;
+    background: #1D1C27;
+    display: inline-block;
+}
+
+.squaress {
+    width: 37px;
+    height: 37px;
+    border-radius: 3px;
+    background: rgba(2, 2, 2, 0.54);
+}
+.squaress:first-child {
+    margin-bottom: 6px;
+}
+
+
+.system {
+    color: #A29BC8;
+    font-family: "Tilda Sans VF";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+/* .btn-telegram,
+.btn-lolzteam,
+.btn-discord {
+  position: relative;
+}
+
+.btn-telegram::before,
+.btn-lolzteam::before,
+.btn-discord::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(48.08% 45.41% at 48.39% 42.66%, #FFF 40.5%, #EB2252 71%, #5405FD 74.5%);
+  mix-blend-mode: hard-light;
+  filter: blur(75px);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.btn-telegram:hover::before,
+.btn-lolzteam:hover::before,
+.btn-discord:hover::before {
+  opacity: 1;
+} */
+
+
+/* .accordion-item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  .accordion-header {
+    background-color: #f1f1f1;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .accordion-header img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .accordion-content {
+      display: none;
+    padding: 10px;
+  }
+
+.accordion-item.active .accordion-content {
+    display: block; */
+
+
+@media screen and (max-width:990px) {
+    /* .container {
+        width: 100%;
+        max-width: 100%;
+    } */
+    body {
+        height: auto;
+    }
+}
+
+@media screen and (max-width:470px) {
+    .wrapper {
+        padding: 20px;
+    }
+    .container {
+        width: 100%;
+    }
+    .btn-links {
+        gap: 10px;
+    }
+}
+@media screen and (max-width:450px) {
+    .adress {
+        font-size: 13px;
+        text-align: center;
+    }
+    .adress a {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:420px) {
+    .header {
+        width: 100%;
+    }
+    .btn-telegram, .btn-lolzteam, .btn-discord {
+        padding: 10px 10px;
+        gap: 5px;
+        font-size: 13px;
+        justify-content: center;
+    }
+    .btn-telegram svg, .btn-lolzteam svg, .btn-discord svg{
+        width: 14px;
+    }
+    .tab-content {
+        padding: 15px;
+    }
+    .adress {
+       display: flex;
+       flex-wrap: wrap;
+    }
+}

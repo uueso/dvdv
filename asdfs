@@ -1,0 +1,59 @@
+ function showContent(tab) {
+    var element = document.getElementById(tab);
+    if (element) {
+      document.getElementById('accordion')?.classList.add('hidden');
+      document.getElementById('project')?.classList.add('hidden');
+      element.classList.remove('hidden');
+
+      // Добавляем класс "актив" для кнопки Проекты
+      document.querySelector('.btn-projects')?.classList.add('active');
+      // Убираем класс "актив" для кнопки Донаты
+      document.querySelector('.btn-donate')?.classList.remove('active');
+    }
+  }
+
+  function toggleContent() {
+    var accordion = document.getElementById('accordion');
+    var project = document.getElementById('project');
+
+    if (accordion && project) {
+      if (accordion.classList.contains('visible')) {
+        accordion.classList.remove('visible');
+        accordion.classList.add('hidden');
+        project.classList.remove('hidden');
+        project.classList.add('visible');
+
+        // Добавляем класс "актив" для кнопки Проекты
+        document.querySelector('.btn-projects')?.classList.add('active');
+        // Убираем класс "актив" для кнопки Донаты
+        document.querySelector('.btn-donate')?.classList.remove('active');
+      } else {
+        project.classList.remove('visible');
+        project.classList.add('hidden');
+        accordion.classList.remove('hidden');
+        accordion.classList.add('visible');
+
+        // Добавляем класс "актив" для кнопки Донаты
+        document.querySelector('.btn-donate')?.classList.add('active');
+        // Убираем класс "актив" для кнопки Проекты
+        document.querySelector('.btn-projects')?.classList.remove('active');
+      }
+    }
+  }
+
+
+
+
+  <div class="tab-item">
+                        <button id="btn-donate" class="btn-donate active" onclick="showContent('donate')">Донаты
+                        </button>
+                        <button id="btn-projects" class="btn-projects" onclick="toggleContent()">Проекты
+                        </button>
+                    </div>
+
+                     <div class="tab-content" id="content">
+                      <div id="accordion" class="accordion visible">
+                      </div>  <!-- accordion -->
+
+                      <div id="project" class="projects hidden">
+                      </div>
